@@ -22,7 +22,7 @@ Member.
 
 
 이동녘:[깃허브](https://github.com/dongnycklee)  
-이성현:[깃허브](https://github.com/seong hyun)  
+이성현:[깃허브](https://github.com/seonghyun)  
 전진영:[깃허브](https://github.com/jeonjinoung)  
 김현호:[깃허브](https://github.com/alsrhkd101)  
 
