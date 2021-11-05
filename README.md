@@ -3,7 +3,7 @@
 # 프로젝트팀명:HeavySmoker 
 
 
-## 👜👢🧢3E('HeavySmoker') - 특정 동호회 소셜 커뮤니티
+## 👜👢🧢('HeavySmoker') - 특정 동호회 소셜 커뮤니티
 ## 프로젝트 시작일 :2021-11-05
 
 ## 👜👢🧢[**서비스로 이동**](http://54.180.155.42:6002/)
@@ -23,8 +23,8 @@ Member.
 
 이동녘:[깃허브](https://github.com/dongnycklee)  
 이성현:[깃허브](https://github.com/seong hyun)  
-전진영:[깃허브](https://github.com/jeonjinoung)
-김현호:[깃허브](https://github.com/alsrhkd101)
+전진영:[깃허브](https://github.com/jeonjinoung)  
+김현호:[깃허브](https://github.com/alsrhkd101)  
 
 
 
