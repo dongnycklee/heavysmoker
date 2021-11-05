@@ -84,7 +84,7 @@ class Signup extends Component {
     } else {
       this.setState({
         loading: false,
-        error: "What day is today? Please write a correct answer!",
+        error: "오늘은 무슨 요일입니까?",
       });
     }
   };
@@ -92,7 +92,7 @@ class Signup extends Component {
   signupForm = (name, email, password, loading, recaptcha) => (
     <form style={{ display: loading ? "none" : "" }}>
       <div className="form-group">
-        <label className="text-muted">Name</label>
+        <label className="text-muted">이름</label>
         <input
           onChange={this.handleChange}
           name="name"
@@ -102,7 +102,7 @@ class Signup extends Component {
         />
       </div>
       <div className="form-group">
-        <label className="text-muted">Email</label>
+        <label className="text-muted">이메일</label>
         <input
           onChange={this.handleChange}
           type="email"
@@ -112,7 +112,7 @@ class Signup extends Component {
         />
       </div>
       <div className="form-group">
-        <label className="text-muted">Password</label>
+        <label className="text-muted">패스워드</label>
         <input
           onChange={this.handleChange}
           type="password"
@@ -123,7 +123,7 @@ class Signup extends Component {
       </div>
       <div className="form-group">
         <label className="text-muted">
-          {recaptcha ? "Captcha success. You got it!" : "What day is today?"}
+          {recaptcha ? "정답입니다!" : "오늘은 무슨요일입니까?"}
         </label>
         <input
           onChange={this.recaptchaHandler}
@@ -142,7 +142,7 @@ class Signup extends Component {
       this.state;
     return (
       <div className="container">
-        <h2 className="mt-5 mb-5">Signup</h2>
+        <h2 className="mt-5 mb-5">회원가입</h2>
         <SocialLogin for="signup" />
         <hr />
         <p className="text-center text-muted" style={{ fontSize: "24px" }}>
@@ -160,8 +160,8 @@ class Signup extends Component {
           className="alert alert-info"
           style={{ display: open ? "" : "none" }}
         >
-          New account is successfully created. Please{" "}
-          <Link to="/signin">Sign In</Link>.
+          회원가입이 완료되었습니다 로그인해주세요{" "}
+          <Link to="/signin">로그인페이지</Link>.
         </div>
         {this.signupForm(name, email, password, loading, recaptcha)}
         {loading ? <Loading /> : ""}
