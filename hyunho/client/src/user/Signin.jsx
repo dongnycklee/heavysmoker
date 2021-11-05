@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Redirect, Link } from "react-router-dom";
 
-import { signin, authenticate } from '../auth';
-import SocialLogin from './SocialLogin';
+import { signin, authenticate } from "../auth";
+import SocialLogin from "./SocialLogin";
 
-import Loading from '../loading/Loading';
+import Loading from "../loading/Loading";
 
 class Signin extends Component {
   constructor() {
     super();
     this.state = {
-      email: '',
-      password: '',
-      error: '',
+      email: "",
+      password: "",
+      error: "",
       redirectToReferer: false,
       loading: false,
       recaptcha: false,
@@ -20,23 +20,23 @@ class Signin extends Component {
   }
 
   recaptchaHandler = (e) => {
-    this.setState({ error: '' });
+    this.setState({ error: "" });
     let userDay = e.target.value.toLowerCase();
     let dayCount;
 
-    if (userDay === 'sunday') {
+    if (userDay === "일요일") {
       dayCount = 0;
-    } else if (userDay === 'monday') {
+    } else if (userDay === "월요일") {
       dayCount = 1;
-    } else if (userDay === 'tuesday') {
+    } else if (userDay === "화요일") {
       dayCount = 2;
-    } else if (userDay === 'wednesday') {
+    } else if (userDay === "수요일") {
       dayCount = 3;
-    } else if (userDay === 'thursday') {
+    } else if (userDay === "목요일") {
       dayCount = 4;
-    } else if (userDay === 'friday') {
+    } else if (userDay === "금요일") {
       dayCount = 5;
-    } else if (userDay === 'saturday') {
+    } else if (userDay === "토요일") {
       dayCount = 6;
     }
 
@@ -53,7 +53,7 @@ class Signin extends Component {
 
   handleChange = (e) => {
     this.setState({
-      error: '',
+      error: "",
       [e.target.name]: e.target.value,
     });
   };
@@ -78,15 +78,15 @@ class Signin extends Component {
     } else {
       this.setState({
         loading: false,
-        error: 'What day is today? Please write a correct answer!',
+        error: "What day is today? Please write a correct answer!",
       });
     }
   };
 
   signinForm = (email, password, loading, recaptcha) => (
-    <form style={{ display: loading ? 'none' : '' }}>
+    <form style={{ display: loading ? "none" : "" }}>
       <div className="form-group">
-        <label className="text-muted">Email</label>
+        <label className="text-muted">이메일</label>
         <input
           onChange={this.handleChange}
           type="email"
@@ -96,7 +96,7 @@ class Signin extends Component {
         />
       </div>
       <div className="form-group">
-        <label className="text-muted">Password</label>
+        <label className="text-muted">패스워드</label>
         <input
           onChange={this.handleChange}
           type="password"
@@ -107,7 +107,7 @@ class Signin extends Component {
       </div>
       <div className="form-group">
         <label className="text-muted">
-          {recaptcha ? 'Captcha success. You got it!' : 'What day is today?'}
+          {recaptcha ? "오우 정답!" : "오늘은 무슨요일입니까?"}
         </label>
         <input
           onChange={this.recaptchaHandler}
@@ -117,7 +117,7 @@ class Signin extends Component {
       </div>
 
       <button onClick={this.clickSubmit} className="btn btn-raised btn-primary">
-        Submit
+        로그인
       </button>
     </form>
   );
@@ -133,7 +133,7 @@ class Signin extends Component {
         <h2 className="mt-5 mb-5">Sign In</h2>
         <SocialLogin />
         <hr />
-        <p className="text-center text-muted" style={{ fontSize: '24px' }}>
+        <p className="text-center text-muted" style={{ fontSize: "24px" }}>
           OR
         </p>
         <hr />
@@ -141,17 +141,17 @@ class Signin extends Component {
 
         <div
           className="alert alert-danger"
-          style={{ display: error ? '' : 'none' }}
+          style={{ display: error ? "" : "none" }}
         >
           {error}
         </div>
         {this.signinForm(email, password, loading, recaptcha)}
 
-        {loading ? <Loading /> : ''}
+        {loading ? <Loading /> : ""}
         <p>
           <Link to="/forgot-password" className="btn btn-raised btn-danger">
-            {' '}
-            Forgot Password
+            {" "}
+            비밀번호 찾기
           </Link>
         </p>
       </div>
