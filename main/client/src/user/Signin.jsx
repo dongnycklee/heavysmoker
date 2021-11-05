@@ -130,11 +130,11 @@ class Signin extends Component {
     }
     return (
       <div className="container">
-        <h2 className="mt-5 mb-5">Sign In</h2>
+        <h2 className="mt-5 mb-5">로그인</h2>
         <SocialLogin />
         <hr />
         <p className="text-center text-muted" style={{ fontSize: "24px" }}>
-          OR
+          상세 정보
         </p>
         <hr />
         <hr />
