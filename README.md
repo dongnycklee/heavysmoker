@@ -163,12 +163,7 @@ Member.
 
 **NodeJs socket.io 깨달은 점 **
 
-실시간 사용자들끼리의  채팅이기에 socket.id를 사용하는 1:1 채팅을 구현했음. socket.io 특성 상 사용자 지정에 대한 이해도 숙지 
-
-# AWS 활용(EC2, RDS)  
-<img width="500" alt="34" src="https://user-images.githubusercontent.com/89692626/137617870-177cb2d9-854b-423a-b04d-3bf45de24ae9.png">     
-<img width="1000" alt="35" src="https://user-images.githubusercontent.com/89692626/137617902-f1bfc9b5-8462-4300-9365-4bd45017b2f3.png">    
-<img width="1000" alt="36" src="https://user-images.githubusercontent.com/89692626/137617905-318f133b-24b3-48ee-800d-3e491d550487.png"> 
+실시간 사용자들끼리의  채팅이기에 socket.id를 사용하는 1:1 채팅을 구현했음. socket.io 특성 상 사용자 지정에 대한 이해도 숙지  
 
 
 데이터베이스 AWS EC2방식 체택 인스턴스 생성후 키값생성 후
@@ -209,7 +204,8 @@ AWS의 EC2를 활용하여 배포를 하였습니다
     
     
 
-서버(app.js) : [코드](https://github.com/3eteam/3eteamproject/blob/f2a2e1500f375490e0b2090779ab612237ae2039/3e/app.js)
+서버(app.js) : [코드]  
+(https://github.com/dongnycklee/heavysmoker/blob/main/main/client/src/App.jsx)  
 -> 각 페이지별 라우터 설정, passport 6002번, express 모듈로 넌적스를 http로 연결
 
 ### 페이지별 설명(views-html)   
