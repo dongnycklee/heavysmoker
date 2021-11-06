@@ -2,6 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
 import { signout, isAuthenticated } from "../auth";
+import styles from "./menu.module.css";
 
 const isActive = (history, path) => {
   if (history.location.pathname === path) {
@@ -15,7 +16,7 @@ const Menu = (props) => (
   <nav
     className="navbar navbar-expand-lg navbar-dark"
     style={{
-      background: "#007991",
+      background: "#646464",
       paddingTop: "15px",
       paddingBottom: "0",
       marginBottom: "50px",
@@ -26,7 +27,11 @@ const Menu = (props) => (
       style={{ color: "white", fontFamily: "Courgette, cursive" }}
       href="/main"
     >
-      <i className="fas fa-camera-retro mr-2"></i>SocialApp
+      <img
+        src="https://i.esdrop.com/d/cl3pewp2aooj/tkdmuGMW1Y.png"
+        style={{ width: "150px" }}
+      />
+      GangSter
     </a>
     <button
       className="navbar-toggler"
