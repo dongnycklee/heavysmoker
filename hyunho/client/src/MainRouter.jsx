@@ -17,11 +17,13 @@ import ForgotPassword from './user/ForgotPassword';
 import ResetPassword from './user/ResetPassword';
 import Chat from './user/Chat';
 import ChatDef from './user/ChatDef';
+import NewsPage from './news/NewsPage';
 
 const MainRouter = () => (
   <div>
     <Menu />
     <Switch>
+      <Route exact path="/news/:category?" component={NewsPage} />
       <Route exact path="/main" component={Home} />
       <Route exact path="/forgot-password" component={ForgotPassword} />
       <Route

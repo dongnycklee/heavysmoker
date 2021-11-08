@@ -127,7 +127,7 @@ class Comment extends Component {
         ) : (
           <div>
             <h4 className="mt-5 mb-5">
-              Leave a comment{" "}
+              댓글을 입력해주세요{" "}
               <span className="pull-right">{comments.length} comments</span>
             </h4>
             <div className="panel-body">
@@ -138,7 +138,7 @@ class Comment extends Component {
                     type="text"
                     onChange={this.handleChange}
                     value={text}
-                    placeholder="Leave a comment..."
+                    placeholder="댓글을 입력해주세요..."
                   />
                   <div>
                     <button
@@ -157,7 +157,7 @@ class Comment extends Component {
                   type="submit"
                   className="btn btn-raised btn-sm btn-info pull-right mt-3 mb-3"
                 >
-                  Add comment
+                  댓글 입력
                 </button>
               </form>
               {showPicker ? <Picker onEmojiClick={this.onEmojiClick} /> : ""}
@@ -214,7 +214,7 @@ class Comment extends Component {
                           {comment.postedBy.name}
                         </strong>
                       </Link>
-                      <p>{comment.text}</p>
+                      <p style={{ color: "black" }}>{comment.text}</p>
                     </div>
                   </li>
                 ))}

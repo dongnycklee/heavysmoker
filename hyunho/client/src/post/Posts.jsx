@@ -105,19 +105,33 @@ class Posts extends Component {
                   />
                 </Link>
                 <div className="card-body">
-                  <h5 className="card-title">{post.title}</h5>
-                  <p className="card-text">{post.body}</p>
+                  <h5
+                    className="card-title"
+                    style={{
+                      color: "black",
+                    }}
+                  >
+                    {post.title}
+                  </h5>
+                  <p
+                    className="card-text"
+                    style={{
+                      color: "black",
+                    }}
+                  >
+                    {post.body}
+                  </p>
                   <Link
                     style={{
-                      background: "#56ccf2",
-                      background: "linear-gradient(to left, #56ccf2, #2f80ed)",
-                      borderRadius: "20px",
+                      background: "#292929",
+                      background: "linear-gradient(to left, #5d5d5d, #161616)",
+                      borderRadius: "1px",
                       padding: "10px",
                     }}
                     to={`/post/${post._id}`}
                     className="btn btn-raised btn-sm btn-primary"
                   >
-                    Read More
+                    상세 보기
                   </Link>
                 </div>
               </div>

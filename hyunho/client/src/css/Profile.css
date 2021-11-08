@@ -4,6 +4,11 @@ body {
   color: #fff;
 }
 
+h5 {
+  color: black;
+  text-align: center;
+}
+
 .navbar-collapse.in {
   display: block !important;
 }
@@ -31,7 +36,7 @@ body {
   border: 2px solid #fff;
 }
 .profile-info-left h2 {
-  font-family: "josefinslab-semibold";
+  font-family: 'josefinslab-semibold';
   margin-bottom: 30px;
 }
 .profile-info-left .section {
@@ -115,11 +120,11 @@ body {
   display: none;
 }
 .btn-toggle-following:hover:after {
-  content: "Unfollow";
+  content: 'Unfollow';
   display: inline;
 }
 .btn-toggle-following:hover i:before {
-  content: "\f129";
+  content: '\f129';
 }
 
 /* list icons */
