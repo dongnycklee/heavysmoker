@@ -142,7 +142,7 @@ class Profile extends Component {
               <div className="text-center">
                 <img
                   height="300"
-                  width="300"
+                  width="100%"
                   src={photoUrl}
                   alt={user.name}
                   onError={(i) => (i.target.src = DefaultProfile)}
@@ -154,27 +154,28 @@ class Profile extends Component {
                 {isAuthenticated().user &&
                   isAuthenticated().user._id === user._id ? (
                   <>
-                    <div className="row">
-                      <div className="col-md-4 col-xs-6">
+                    <div className="row" style={{ justifyContent: "center" }}>
+                      <div className="col-xs">
                         <Link
-                          className="btn btn-sm btn-raised btn-primary"
+                          className="btn btn-md-4 btn-raised btn-dark"
                           to={`/post/create`}
                         >
                           새 게시물
                         </Link>
                       </div>
-                      <div className="col-md-4 col-xs-6">
+                      <div className="col-xs">
                         <Link
-                          className="btn btn-sm btn-raised btn-dark"
+                          className="btn btn-md-4 btn-raised btn-dark"
                           to={`/user/edit/${user._id}`}
                         >
                           프로필 수정
                         </Link>
                       </div>
+                      <div className="btn-md-4" >
+                        <DeleteUser userId={user._id} />
+                      </div>
                     </div>
-                    <div className="mt-2">
-                      <DeleteUser userId={user._id} />
-                    </div>
+
                   </>
                 ) : (
                   <div className="row">
