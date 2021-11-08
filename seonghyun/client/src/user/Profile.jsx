@@ -171,7 +171,7 @@ class Profile extends Component {
                           프로필 수정
                         </Link>
                       </div>
-                      <div className="btn-md-4" >
+                      <div className="clo-xs">
                         <DeleteUser userId={user._id} />
                       </div>
                     </div>

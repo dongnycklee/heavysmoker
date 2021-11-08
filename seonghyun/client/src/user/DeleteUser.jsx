@@ -49,9 +49,8 @@ class DeleteUser extends Component {
     return (
       <button
         onClick={this.deleteConfirmed}
-        className="btn btn-sm btn-raised btn-danger"
-      >
-        회원탈퇴
+        className="btn btn-md-4 btn-raised btn-dark"
+      >회원탈퇴
       </button>
     );
   }
