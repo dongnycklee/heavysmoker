@@ -220,12 +220,14 @@ class Chat extends Component {
                                                             <div className="user">
                                                                 <img
                                                                     src={`${process.env.REACT_APP_API_URL}/user/photo/${user._id}`}
-                                                                    alt={user.name}
+                                                                    alt={
+                                                                        user.name
+                                                                    }
                                                                     onError={(
                                                                         i
                                                                     ) =>
-                                                                    (i.target.src =
-                                                                        DefaultProfile)
+                                                                        (i.target.src =
+                                                                            DefaultProfile)
                                                                     }
                                                                 />
                                                             </div>

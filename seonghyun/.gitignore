@@ -1,6 +1,6 @@
 /server/node_modules
 /server/.env
-settings.json
+
 
 /client/node_modules
 /client/.env
