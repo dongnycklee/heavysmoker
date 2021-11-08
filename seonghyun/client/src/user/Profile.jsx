@@ -200,7 +200,7 @@ class Profile extends Component {
                 <p>{user.about}</p>
               </div>
               <div className="section">
-                <h3>상태 메세지</h3>
+                <h3>상태 요약</h3>
                 <p>
                   <span className="badge badge-pill badge-primary">
                     {user.following.length}
