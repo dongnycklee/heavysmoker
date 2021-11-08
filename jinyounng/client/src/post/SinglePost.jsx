@@ -1,78 +1,75 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { singlePost, remove, like, unlike } from './apiPost';
-import { Link, Redirect } from 'react-router-dom';
-import Loading from '../loading/Loading';
+import { singlePost, remove, like, unlike } from "./apiPost";
+import { Link, Redirect } from "react-router-dom";
+import Loading from "../loading/Loading";
 import { isAuthenticated } from "../auth";
 
-import Comment from './Comment';
-import DefaultProfile from '../images/avatar.jpg'
-import {timeDifference} from './timeDifference';
+import Comment from "./Comment";
+import DefaultProfile from "../images/avatar.jpg";
+import { timeDifference } from "./timeDifference";
 
-import { confirmAlert } from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css';
-
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 
 class SinglePost extends Component {
     constructor() {
         super();
         this.state = {
-            post: '',
+            post: "",
             redirectToHome: false,
             redirectToSignin: false,
             like: false,
             likes: 0,
             comments: [],
-            loading: false
-        }
+            loading: false,
+        };
     }
 
     checkLike = (likes) => {
-        const  userId = isAuthenticated() && isAuthenticated().user._id;
+        const userId = isAuthenticated() && isAuthenticated().user._id;
         let match = likes.indexOf(userId) !== -1; //true if user found
         return match;
     };
 
     componentDidMount() {
         const postId = this.props.match.params.postId;
-        singlePost(postId)
-            .then(data => {
-                if (data.error) {
-                    console.log(data.error)
-                } else {
-                    this.setState({ 
-                        post: data, 
-                        likes: data.likes.length, 
-                        like: this.checkLike(data.likes),
-                        comments: data.comments
-                    });
-                }
-            });
-    };
+        singlePost(postId).then((data) => {
+            if (data.error) {
+                console.log(data.error);
+            } else {
+                this.setState({
+                    post: data,
+                    likes: data.likes.length,
+                    like: this.checkLike(data.likes),
+                    comments: data.comments,
+                });
+            }
+        });
+    }
 
-    updateComments = comments => {
+    updateComments = (comments) => {
         this.setState({ comments });
     };
 
     likeToggle = () => {
-        this.setState({ loading: true })
-        if(!isAuthenticated()){
-            this.setState({ redirectToSignin: true, loading: false })
+        this.setState({ loading: true });
+        if (!isAuthenticated()) {
+            this.setState({ redirectToSignin: true, loading: false });
             return false; //so that rest of code isn't executed
         }
         let callApi = this.state.like ? unlike : like;
         const userId = isAuthenticated().user._id;
         const postId = this.state.post._id;
         const token = isAuthenticated().token;
-        callApi(userId, token, postId)
-        .then(data => {
-            if(data.error){
-                console.log(data.error)
+        callApi(userId, token, postId).then((data) => {
+            if (data.error) {
+                console.log(data.error);
             } else {
                 this.setState({
                     like: !this.state.like,
                     likes: data.likes.length,
-                    loading: false
+                    loading: false,
                 });
             }
         });
@@ -81,126 +78,202 @@ class SinglePost extends Component {
     deletePost = () => {
         const postId = this.props.match.params.postId;
         const token = isAuthenticated().token;
-        remove(postId, token)
-        .then(data => {
-            if(data.error){
-                console.log(data.error)
+        remove(postId, token).then((data) => {
+            if (data.error) {
+                console.log(data.error);
             } else {
-                this.setState({redirectToHome: true})
-            }   
-        })
-    }
+                this.setState({ redirectToHome: true });
+            }
+        });
+    };
 
     deleteConfirmed = () => {
         confirmAlert({
-            title: 'Are you sure ?',
-            message: 'you want to delete this post.',
+            title: "괜찮아??",
+            message: "너는 이게시물이 삭제되도 괜찮니?.",
             buttons: [
                 {
-                    label: 'Yes',
-                    onClick: () => this.deletePost()
+                    label: "응 괜찮아",
+                    onClick: () => this.deletePost(),
                 },
                 {
-                    label: 'No',
-                }
-            ]
+                    label: "안되 안되나아아아아안되!!!",
+                },
+            ],
         });
-    }
-    
+    };
+
+    // likepost = () => {
+    //     const postId = this.props.match.parms.postId;
+    //     const token = isAuthenticated().token;
+    //     remove(postId, token).then((data) => {
+    //         if (data.error) {
+    //             console.log(data.error);
+    //         } else {
+    //             this.setState({ redirectToHome: true });
+    //         }
+    //     });
+    // };
+
+    // likefirmpost = () => {
+    //     confirmAlert({
+    //         title: "너 이거 진짜 좋아하니?",
+    //         message: "근데 이거 정말 좋아하는거 맞니?",
+    //         button: [
+    //             {
+    //                 label: "응 진짜 좋아해",
+    //                 onclick: () => this.likepost(),
+    //             },
+    //             {
+    //                 label: "사실 별로 안좋아해 공유안할래",
+    //             },
+    //         ],
+    //     });
+    // };
 
     renderPost = (post) => {
         const posterId = post.postedBy ? post.postedBy._id : "";
         const posterName = post.postedBy ? post.postedBy.name : " Unknown";
 
-        const { like, likes, redirectToSignin, redirectToHome, comments } = this.state;
+        const { like, likes, redirectToSignin, redirectToHome, comments } =
+            this.state;
 
-        if(redirectToHome){
-            return <Redirect to='/'></Redirect>
-        } else if(redirectToSignin){
-            return <Redirect to='/signin'></Redirect>
+        if (redirectToHome) {
+            return <Redirect to="/main"></Redirect>;
+        } else if (redirectToSignin) {
+            return <Redirect to="/signin"></Redirect>;
         }
-        return(
-            <div className="card col-md-12 mb-5" style={{ padding: "0" }} >
+        return (
+            <div className="card col-md-12 mb-5" style={{ padding: "0" }}>
                 <div className="card-header">
-                    <img 
+                    <img
                         className="mb-1 mr-2"
-                        style={{ height: "40px", width: "40px", borderRadius: "50%"  }} 
+                        style={{
+                            height: "40px",
+                            width: "40px",
+                            borderRadius: "50%",
+                        }}
                         src={`${process.env.REACT_APP_API_URL}/user/photo/${posterId}`}
-                        onError={i => (i.target.src = DefaultProfile)} 
+                        onError={(i) => (i.target.src = DefaultProfile)}
                         alt={posterName}
                     />
-                    <Link to={`/user/${posterId}`} style={{fontSize: "24px"}}>
-                            {posterName}
+                    <Link to={`/user/${posterId}`} style={{ fontSize: "24px" }}>
+                        {posterName}
                     </Link>
                     <p
                         style={{ marginBottom: "0" }}
                         className="pull-right mt-2"
                     >
                         <span className="ml-2">
-                            <i className="far fa-clock"></i>{" "+timeDifference(new Date(), new Date(post.created))}
+                            <i className="far fa-clock"></i>
+                            {" " +
+                                timeDifference(
+                                    new Date(),
+                                    new Date(post.created)
+                                )}
                         </span>
                     </p>
                 </div>
                 <Link to={`/post/${post._id}`}>
-                    <img 
-                        className="card-img-top" 
+                    <img
+                        className="card-img-top"
                         src={`${process.env.REACT_APP_API_URL}/post/photo/${post._id}`}
                         alt={post.title}
-                        style={{ 
-                            maxHeight: "700px",  
+                        style={{
+                            maxHeight: "700px",
                             backgroundSize: "cover",
-                            backgroundRepeat: 'no-repeat',
-                            backgroundPosition: "50% 50%" }}
+                            backgroundRepeat: "no-repeat",
+                            backgroundPosition: "50% 50%",
+                        }}
                     />
                 </Link>
-                    {like ? (
-                        <h3>
-                            <i onClick={this.likeToggle} className="fa fa-heart" style={{color: "red", padding: "10px", cursor: "pointer"}} aria-hidden="true"></i>
-                            <i className="far fa-comments ml-3"></i> 
-                        </h3>
-                    ) : (
-                        <h3>
-                            <i onClick={this.likeToggle} className="fa fa-heart-o" style={{padding: "10px", cursor: "pointer"}} aria-hidden="true"></i>
-                            <i className="far fa-comments ml-3"></i> 
-                        </h3>
-                    )}
-                    <span style={{fontSize: "20px"}} className="ml-3" >{likes} Likes </span>
-                
-                <div className="card-body">
+                {like ? (
+                    <h3>
+                        <i
+                            onClick={this.likeToggle}
+                            className="fa fa-heart"
+                            style={{
+                                color: "red",
+                                padding: "10px",
+                                cursor: "pointer",
+                                color: "black",
+                            }}
+                            aria-hidden="true"
+                        ></i>
+                        <i
+                            className="far fa-comments ml-3"
+                            style={{ color: "black" }}
+                        ></i>
+                    </h3>
+                ) : (
+                    <h3>
+                        <i
+                            onClick={this.likeToggle}
+                            className="fa fa-heart-o"
+                            style={{
+                                padding: "10px",
+                                cursor: "pointer",
+                                color: "black",
+                            }}
+                            aria-hidden="true"
+                        ></i>
+                        <i className="far fa-comments ml-3"></i>
+                    </h3>
+                )}
+                <span
+                    style={{ fontSize: "20px", color: "black" }}
+                    className="ml-3"
+                >
+                    {likes} Likes{" "}
+                </span>
+
+                <div className="card-body" style={{ color: "black" }}>
                     <h5 className="card-title">{post.title}</h5>
                     <p className="card-text">{post.body}</p>
                     <Link
-                        to={`/`}
-                        className="btn btn-raised btn-sm btn-primary mr-5">
+                        to={`/main`}
+                        className="btn btn-raised btn-sm btn-primary mr-5"
+                    >
                         Back to posts
                     </Link>
-                    {isAuthenticated().user && isAuthenticated().user._id === post.postedBy._id && (
-                        <>
-                            <Link
-                                to={`/post/edit/${post._id}`}
-                                className="btn btn-raised btn-sm btn-warning mr-5">
+                    <button
+                        onClick={this.likepost}
+                        className="btn btn-raised btn-sm btn-like"
+                    >
+                        like post
+                    </button>
+                    {isAuthenticated().user &&
+                        isAuthenticated().user._id === post.postedBy._id && (
+                            <>
+                                <Link
+                                    to={`/post/edit/${post._id}`}
+                                    className="btn btn-raised btn-sm btn-warning mr-5"
+                                >
                                     Edit Post
-                            </Link>
-                            <button onClick={this.deleteConfirmed} className="btn btn-raised btn-sm btn-danger">
-                                Delete Post
-                            </button>
-                        </>
-                    )}
-                    <Comment postId={post._id} comments={comments.reverse()} updateComments={this.updateComments} />
+                                </Link>
+                                <button
+                                    onClick={this.deleteConfirmed}
+                                    className="btn btn-raised btn-sm btn-danger"
+                                >
+                                    Delete Post
+                                </button>
+                            </>
+                        )}
+                    <Comment
+                        postId={post._id}
+                        comments={comments.reverse()}
+                        updateComments={this.updateComments}
+                    />
                 </div>
             </div>
         );
-    }
+    };
 
     render() {
         const { post, loading } = this.state;
         return (
             <div className="container">
-                {(!post || loading) ? (
-                    <Loading />
-                ) : (
-                    this.renderPost(post)
-                )}
+                {!post || loading ? <Loading /> : this.renderPost(post)}
             </div>
         );
     }

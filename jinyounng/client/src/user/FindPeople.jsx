@@ -77,6 +77,13 @@ class FindPeople extends Component {
             <Link
               to={`/user/${user._id}`}
               className="card-link btn btn-raised btn-primary"
+              style={{
+                background: "#56ccf2",
+                background:
+                  "-webkit-linear-gradient(to left, #616161, #000000)",
+                background: "linear-gradient(to left, #616161, #000000)",
+                padding: "10px",
+              }}
             >
               프로필
             </Link>
@@ -84,8 +91,8 @@ class FindPeople extends Component {
               style={{
                 background: "#56ccf2",
                 background:
-                  "-webkit-linear-gradient(to left, #56ccf2, #2f80ed)",
-                background: "linear-gradient(to left, #56ccf2, #2f80ed)",
+                  "-webkit-linear-gradient(to left, #616161, #000000)",
+                background: "linear-gradient(to left, #616161, #000000)",
                 padding: "10px",
               }}
               onClick={() => this.clickFollow(user, i)}
