@@ -2,7 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
 import { signout, isAuthenticated } from "../auth";
-import styles from "./menu.module.css";
+import "./menu.css";
 
 const isActive = (history, path) => {
   if (history.location.pathname === path) {
@@ -14,7 +14,7 @@ const isActive = (history, path) => {
 
 const Menu = (props) => (
   <nav
-    className="navbar navbar-expand-lg navbar-dark"
+    className="navbar navbar-expand-lg navbar-dark p-0 m-0 pr-2"
     style={{
       background: "#646464",
       paddingTop: "15px",
