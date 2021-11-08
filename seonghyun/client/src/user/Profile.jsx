@@ -109,16 +109,15 @@ class Profile extends Component {
   renderProfile = () => {
     const { user, following, posts } = this.state;
     const photoUrl = user._id
-      ? `${process.env.REACT_APP_API_URL}/user/photo/${
-          user._id
-        }?${new Date().getTime()}`
+      ? `${process.env.REACT_APP_API_URL}/user/photo/${user._id
+      }?${new Date().getTime()}`
       : DefaultProfile;
     let followingBadge = (
       <p style={{ marginBottom: "0" }}>
         <span className="badge badge-pill badge-primary">
           {user.following.length}
         </span>{" "}
-        Following
+        팔로잉
       </p>
     );
     let followersBadge = (
@@ -126,13 +125,13 @@ class Profile extends Component {
         <span className="badge badge-pill badge-success">
           {user.followers.length}
         </span>{" "}
-        Followers
+        팔로워
       </p>
     );
     let postsBadge = (
       <p style={{ marginBottom: "0" }}>
         <span className="badge badge-pill badge-warning">{posts.length}</span>
-        내게시물
+        내 게시물
       </p>
     );
     return (
@@ -153,7 +152,7 @@ class Profile extends Component {
               </div>
               <div className="action-buttons">
                 {isAuthenticated().user &&
-                isAuthenticated().user._id === user._id ? (
+                  isAuthenticated().user._id === user._id ? (
                   <>
                     <div className="row">
                       <div className="col-md-4 col-xs-6">
@@ -161,7 +160,7 @@ class Profile extends Component {
                           className="btn btn-sm btn-raised btn-primary"
                           to={`/post/create`}
                         >
-                          Create Post
+                          새 게시물
                         </Link>
                       </div>
                       <div className="col-md-4 col-xs-6">
@@ -169,7 +168,7 @@ class Profile extends Component {
                           className="btn btn-sm btn-raised btn-dark"
                           to={`/user/edit/${user._id}`}
                         >
-                          Edit Profile
+                          프로필 수정
                         </Link>
                       </div>
                     </div>
@@ -184,7 +183,7 @@ class Profile extends Component {
                         className="btn btn-sm btn-raised btn-success ml-3"
                         to={`/chat/${isAuthenticated().user._id}/${user._id}`}
                       >
-                        Message
+                        메세지
                       </Link>
                     </div>
                     <div className="col-md-6 col-xs-6">
@@ -197,28 +196,28 @@ class Profile extends Component {
                 )}
               </div>
               <div className="section">
-                <h3>About Me</h3>
+                <h3>자기 소개</h3>
                 <p>{user.about}</p>
               </div>
               <div className="section">
-                <h3>Statistics</h3>
+                <h3>상태 메세지</h3>
                 <p>
                   <span className="badge badge-pill badge-primary">
                     {user.following.length}
                   </span>{" "}
-                  Following
+                  팔로잉
                 </p>
                 <p>
                   <span className="badge badge-pill badge-success">
                     {user.followers.length}
                   </span>{" "}
-                  Followers
+                  팔로워
                 </p>
                 <p>
                   <span className="badge badge-pill badge-warning">
                     {posts.length}
                   </span>{" "}
-                  Posts
+                  게시글
                 </p>
               </div>
             </div>
