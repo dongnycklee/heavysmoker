@@ -109,15 +109,16 @@ class Profile extends Component {
   renderProfile = () => {
     const { user, following, posts } = this.state;
     const photoUrl = user._id
-      ? `${process.env.REACT_APP_API_URL}/user/photo/${user._id
-      }?${new Date().getTime()}`
+      ? `${process.env.REACT_APP_API_URL}/user/photo/${
+          user._id
+        }?${new Date().getTime()}`
       : DefaultProfile;
     let followingBadge = (
       <p style={{ marginBottom: "0" }}>
         <span className="badge badge-pill badge-primary">
           {user.following.length}
         </span>{" "}
-        팔로잉
+        Following
       </p>
     );
     let followersBadge = (
@@ -125,13 +126,13 @@ class Profile extends Component {
         <span className="badge badge-pill badge-success">
           {user.followers.length}
         </span>{" "}
-        팔로워
+        Followers
       </p>
     );
     let postsBadge = (
       <p style={{ marginBottom: "0" }}>
         <span className="badge badge-pill badge-warning">{posts.length}</span>
-        내 게시물
+        내게시물
       </p>
     );
     return (
@@ -142,7 +143,7 @@ class Profile extends Component {
               <div className="text-center">
                 <img
                   height="300"
-                  width="100%"
+                  width="300"
                   src={photoUrl}
                   alt={user.name}
                   onError={(i) => (i.target.src = DefaultProfile)}
@@ -152,30 +153,29 @@ class Profile extends Component {
               </div>
               <div className="action-buttons">
                 {isAuthenticated().user &&
-                  isAuthenticated().user._id === user._id ? (
+                isAuthenticated().user._id === user._id ? (
                   <>
-                    <div className="row" style={{ justifyContent: "center" }}>
-                      <div className="col-xs">
+                    <div className="row">
+                      <div className="col-md-4 col-xs-6">
                         <Link
-                          className="btn btn-md-4 btn-raised btn-dark"
+                          className="btn btn-sm btn-raised btn-primary"
                           to={`/post/create`}
                         >
-                          새 게시물
+                          Create Post
                         </Link>
                       </div>
-                      <div className="col-xs">
+                      <div className="col-md-4 col-xs-6">
                         <Link
-                          className="btn btn-md-4 btn-raised btn-dark"
+                          className="btn btn-sm btn-raised btn-dark"
                           to={`/user/edit/${user._id}`}
                         >
-                          프로필 수정
+                          Edit Profile
                         </Link>
                       </div>
-                      <div className="clo-xs">
-                        <DeleteUser userId={user._id} />
-                      </div>
                     </div>
-
+                    <div className="mt-2">
+                      <DeleteUser userId={user._id} />
+                    </div>
                   </>
                 ) : (
                   <div className="row">
@@ -184,7 +184,7 @@ class Profile extends Component {
                         className="btn btn-sm btn-raised btn-success ml-3"
                         to={`/chat/${isAuthenticated().user._id}/${user._id}`}
                       >
-                        메세지
+                        Message
                       </Link>
                     </div>
                     <div className="col-md-6 col-xs-6">
@@ -197,28 +197,28 @@ class Profile extends Component {
                 )}
               </div>
               <div className="section">
-                <h3>자기 소개</h3>
+                <h3>About Me</h3>
                 <p>{user.about}</p>
               </div>
               <div className="section">
-                <h3>상태 요약</h3>
+                <h3>Statistics</h3>
                 <p>
                   <span className="badge badge-pill badge-primary">
                     {user.following.length}
                   </span>{" "}
-                  팔로잉
+                  Following
                 </p>
                 <p>
                   <span className="badge badge-pill badge-success">
                     {user.followers.length}
                   </span>{" "}
-                  팔로워
+                  Followers
                 </p>
                 <p>
                   <span className="badge badge-pill badge-warning">
                     {posts.length}
                   </span>{" "}
-                  게시글
+                  Posts
                 </p>
               </div>
             </div>
