@@ -89,15 +89,15 @@ class SinglePost extends Component {
 
   deleteConfirmed = () => {
     confirmAlert({
-      title: "Are you sure ?",
-      message: "you want to delete this post.",
+      title: "확실합니까 ?",
+      message: "이 게시물을 지웁니다.",
       buttons: [
         {
-          label: "Yes",
+          label: "네",
           onClick: () => this.deletePost(),
         },
         {
-          label: "No",
+          label: "아니오",
         },
       ],
     });
@@ -116,8 +116,8 @@ class SinglePost extends Component {
       return <Redirect to="/signin"></Redirect>;
     }
     return (
-      <div className="card col-md-12 mb-5" style={{ padding: "0" }}>
-        <div className="card-header">
+      <div className="card-dark col-md-12 mb-5" style={{ padding: "0" }}>
+        <div className="card-header-dark">
           <img
             className="mb-1 mr-2"
             style={{ height: "40px", width: "40px", borderRadius: "50%" }}
@@ -170,32 +170,34 @@ class SinglePost extends Component {
           </h3>
         )}
         <span style={{ fontSize: "20px" }} className="ml-3">
-          {likes} Likes{" "}
+          {likes} 좋아요{" "}
         </span>
 
         <div className="card-body">
           <h5 className="card-title">{post.title}</h5>
           <p className="card-text">{post.body}</p>
-          <Link to={`/main`} className="btn btn-raised btn-sm btn-primary mr-5">
-            Back to posts
-          </Link>
-          {isAuthenticated().user &&
-            isAuthenticated().user._id === post.postedBy._id && (
-              <>
-                <Link
-                  to={`/post/edit/${post._id}`}
-                  className="btn btn-raised btn-sm btn-warning mr-5"
-                >
-                  Edit Post
-                </Link>
-                <button
-                  onClick={this.deleteConfirmed}
-                  className="btn btn-raised btn-sm btn-danger"
-                >
-                  Delete Post
-                </button>
-              </>
-            )}
+          <div className="row" style={{ justifyContent: "center", alignItems: "center" }}>
+            <Link to={`/main`} className="btn btn-raised btn-sm btn-dark">
+              이전 게시물
+            </Link>
+            {isAuthenticated().user &&
+              isAuthenticated().user._id === post.postedBy._id && (
+                <>
+                  <Link
+                    to={`/post/edit/${post._id}`}
+                    className="btn btn-raised btn-sm btn-dark"
+                  >
+                    게시물 수정
+                  </Link>
+                  <button
+                    onClick={this.deleteConfirmed}
+                    className="btn btn-raised btn-sm btn-dark"
+                  >
+                    게시물 삭제
+                  </button>
+                </>
+              )}
+          </div>
           <Comment
             postId={post._id}
             comments={comments.reverse()}

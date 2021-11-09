@@ -128,7 +128,7 @@ class Comment extends Component {
           <div>
             <h4 className="mt-5 mb-5">
               댓글을 입력해주세요{" "}
-              <span className="pull-right">{comments.length} comments</span>
+              <span className="pull-right">{comments.length} 댓글</span>
             </h4>
             <div className="panel-body">
               <form onSubmit={this.addComment}>
@@ -155,7 +155,7 @@ class Comment extends Component {
                 </div>
                 <button
                   type="submit"
-                  className="btn btn-raised btn-sm btn-info pull-right mt-3 mb-3"
+                  className="btn btn-raised btn-sm btn-info pull-right mt-3 mb-3 btn-dark"
                 >
                   댓글 입력
                 </button>
@@ -196,7 +196,7 @@ class Comment extends Component {
                         <span>
                           {isAuthenticated().user &&
                             isAuthenticated().user._id ===
-                              comment.postedBy._id && (
+                            comment.postedBy._id && (
                               <>
                                 <span
                                   onClick={() => this.deleteConfirmed(comment)}
