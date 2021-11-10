@@ -31,7 +31,7 @@ export const createPost = ({content, images, auth, socket}) => async (dispatch) 
         // Notify
         const msg = {
             id: res.data.newPost._id,
-            text: 'added a new post.',
+            text: '님이 새 게시물을 포스팅하셨습니다.',
             recipients: res.data.newPost.user.followers,
             url: `/post/${res.data.newPost._id}`,
             content, 
@@ -108,7 +108,7 @@ export const likePost = ({post, auth, socket}) => async (dispatch) => {
         // Notify
         const msg = {
             id: auth.user._id,
-            text: 'like your post.',
+            text: '님이 좋아요를 눌렀습니다.',
             recipients: [post.user._id],
             url: `/post/${post._id}`,
             content: post.content, 
@@ -137,7 +137,7 @@ export const unLikePost = ({post, auth, socket}) => async (dispatch) => {
         // Notify
         const msg = {
             id: auth.user._id,
-            text: 'like your post.',
+            text: '님이 좋아요를 눌렀습니다.',
             recipients: [post.user._id],
             url: `/post/${post._id}`,
         }
@@ -174,7 +174,7 @@ export const deletePost = ({post, auth, socket}) => async (dispatch) => {
         // Notify
         const msg = {
             id: post._id,
-            text: 'added a new post.',
+            text: '님이 새 게시물을 포스팅하셨습니다.',
             recipients: res.data.newPost.user.followers,
             url: `/post/${post._id}`,
         }

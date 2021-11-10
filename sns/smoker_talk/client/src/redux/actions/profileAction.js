@@ -49,13 +49,13 @@ export const getProfileUsers = ({id, auth}) => async (dispatch) => {
 
 export const updateProfileUser = ({userData, avatar, auth}) => async (dispatch) => {
     if(!userData.fullname)
-    return dispatch({type: GLOBALTYPES.ALERT, payload: {error: "Please add your full name."}})
+    return dispatch({type: GLOBALTYPES.ALERT, payload: {error: "이름을 추가해주세요."}})
 
     if(userData.fullname.length > 25)
-    return dispatch({type: GLOBALTYPES.ALERT, payload: {error: "Your full name too long."}})
+    return dispatch({type: GLOBALTYPES.ALERT, payload: {error: "이름이 너무 깁니다. (25자 이내)"}})
 
     if(userData.story.length > 200)
-    return dispatch({type: GLOBALTYPES.ALERT, payload: {error: "Your story too long."}})
+    return dispatch({type: GLOBALTYPES.ALERT, payload: {error: "내용이 너무 깁니다. (200자 이내)"}})
 
     try {
         let media;
@@ -119,7 +119,7 @@ export const follow = ({users, user, auth, socket}) => async (dispatch) => {
         // Notify
         const msg = {
             id: auth.user._id,
-            text: 'has started to follow you.',
+            text: '님이 팔로우 했습니다.',
             recipients: [newUser._id],
             url: `/profile/${auth.user._id}`,
         }
@@ -169,7 +169,7 @@ export const unfollow = ({users, user, auth, socket}) => async (dispatch) => {
         // Notify
         const msg = {
             id: auth.user._id,
-            text: 'has started to follow you.',
+            text: '님이 팔로우 하셨습니다.',
             recipients: [newUser._id],
             url: `/profile/${auth.user._id}`,
         }

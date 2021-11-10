@@ -22,7 +22,7 @@ const NotifyModal = () => {
         const newArr = notify.data.filter(item => item.isRead === false)
         if (newArr.length === 0) return dispatch(deleteAllNotifies(auth.token))
 
-        if (window.confirm(`You have ${newArr.length} unread notices. Are you sure you want to delete all?`)) {
+        if (window.confirm(`확인하지 않은 ${newArr.length} 개의 알림이 있습니다. 정말 모두 지우시겠습니까?`)) {
             return dispatch(deleteAllNotifies(auth.token))
         }
     }

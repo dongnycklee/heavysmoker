@@ -70,7 +70,7 @@ const MsgDisplay = ({user, msg, theme, data}) => {
                         </span>
 
                         <div className="text-left">
-                            <h6>{msg.call.video ? 'Video Call' : 'Audio Call'}</h6>
+                            <h6>{msg.call.video ? '페이스톡' : '보이스톡'}</h6>
                             <small>
                                 {
                                     msg.call.times > 0 

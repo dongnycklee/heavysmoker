@@ -8,11 +8,11 @@ const commentCtrl = {
             const { postId, content, tag, reply, postUserId } = req.body
 
             const post = await Posts.findById(postId)
-            if(!post) return res.status(400).json({msg: "This post does not exist."})
+            if(!post) return res.status(400).json({msg: "게시물이 존재하지 않습니다."})
 
             if(reply){
                 const cm = await Comments.findById(reply)
-                if(!cm) return res.status(400).json({msg: "This comment does not exist."})
+                if(!cm) return res.status(400).json({msg: "댓글이 없습니다."})
             }
 
             const newComment = new Comments({
@@ -39,7 +39,7 @@ const commentCtrl = {
                 _id: req.params.id, user: req.user._id
             }, {content})
 
-            res.json({msg: 'Update Success!'})
+            res.json({msg: '업데이트완료.'})
 
         } catch (err) {
             return res.status(500).json({msg: err.message})

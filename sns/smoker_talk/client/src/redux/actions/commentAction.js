@@ -23,7 +23,7 @@ export const createComment = ({post, newComment, auth, socket}) => async (dispat
         // Notify
         const msg = {
             id: res.data.newComment._id,
-            text: newComment.reply ? 'mentioned you in a comment.' : 'has commented on your post.',
+            text: newComment.reply ? '님이 댓글에서 언급했습니다.' : '님이 게시물에 댓글을 남겼습니다.',
             recipients: newComment.reply ? [newComment.tag._id] : [post.user._id],
             url: `/post/${post._id}`,
             content: post.content, 
@@ -99,7 +99,7 @@ export const deleteComment = ({post, comment, auth, socket}) => async (dispatch)
 
             const msg = {
                 id: item._id,
-                text: comment.reply ? 'mentioned you in a comment.' : 'has commented on your post.',
+                text: comment.reply ? '님이 댓글에서 언급했습니다.' : '님이 게시물에 댓글을 남겼습니다.',
                 recipients: comment.reply ? [comment.tag._id] : [post.user._id],
                 url: `/post/${post._id}`,
             }

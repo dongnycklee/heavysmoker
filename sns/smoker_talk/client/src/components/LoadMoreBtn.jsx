@@ -8,7 +8,7 @@ const LoadMoreBtn = ({result, page, load, handleLoadMore}) => {
 
                 !load && <button className="btn btn-dark mx-auto d-block"
                 onClick={handleLoadMore}>
-                    Load more
+                    더보기
                 </button>
             }
             

@@ -43,11 +43,11 @@ const RightSideBar = () => {
                     https://github.com/dongnycklee/heavysmoker
                 </a>
                 <small className="d-block">
-                    "Smoker Talk에 오신 걸 환영합니다."
+                    "GangSter Talk에 오신 걸 환영합니다."
                 </small>
 
                 <small>
-                    &copy; 2021 Smoker Talk FROM Heavy Smoker
+                    &copy; 2021 GangSter Talk FROM Heavy Smoker
                 </small>
             </div>
 

@@ -204,8 +204,8 @@ const CallModal = () => {
                         : <div>
                             {
                                 call.video
-                                ? <span>calling video...</span>
-                                : <span>calling audio...</span>
+                                ? <span>페이스톡 해요~</span>
+                                : <span>전화 거는중...</span>
                             }
                         </div>
                     }

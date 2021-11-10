@@ -1,12 +1,12 @@
 export const checkImage = (file) => {
     let err = ""
-    if(!file) return err = "File does not exist."
+    if(!file) return err = "파일이 존재하지 않습니다."
 
     if(file.size > 1024 * 1024) // 1mb
-    err = "The largest image size is 1mb."
+    err = "최대파일 크기는 1MB 입니다."
 
     if(file.type !== 'image/jpeg' && file.type !== 'image/png' )
-    err = "Image format is incorrect."
+    err = "파일 확장자를 확인해주세요."
     
     return err;
 }

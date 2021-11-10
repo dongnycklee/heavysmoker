@@ -15,7 +15,7 @@ const userCtrl = {
         try {
             const user = await Users.findById(req.params.id).select('-password')
             .populate("followers following", "-password")
-            if(!user) return res.status(400).json({msg: "User does not exist."})
+            if(!user) return res.status(400).json({msg: "유저가 존재하지 않습니다."})
             
             res.json({user})
         } catch (err) {
@@ -25,13 +25,13 @@ const userCtrl = {
     updateUser: async (req, res) => {
         try {
             const { avatar, fullname, mobile, address, story, website, gender } = req.body
-            if(!fullname) return res.status(400).json({msg: "Please add your full name."})
+            if(!fullname) return res.status(400).json({msg: "이름을 추가해주세요."})
 
             await Users.findOneAndUpdate({_id: req.user._id}, {
                 avatar, fullname, mobile, address, story, website, gender
             })
 
-            res.json({msg: "Update Success!"})
+            res.json({msg: "업데이트 완료."})
 
         } catch (err) {
             return res.status(500).json({msg: err.message})
@@ -40,7 +40,7 @@ const userCtrl = {
     follow: async (req, res) => {
         try {
             const user = await Users.find({_id: req.params.id, followers: req.user._id})
-            if(user.length > 0) return res.status(500).json({msg: "You followed this user."})
+            if(user.length > 0) return res.status(500).json({msg: "팔로우 했습니다."})
 
             const newUser = await Users.findOneAndUpdate({_id: req.params.id}, { 
                 $push: {followers: req.user._id}

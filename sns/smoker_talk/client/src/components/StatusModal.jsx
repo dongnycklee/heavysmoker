@@ -118,7 +118,7 @@ const StatusModal = () => {
 
                 <div className="status_body">
                     <textarea name="content" value={content}
-                        placeholder={`${auth.user.username}, what are you thinking?`}
+                        placeholder={`${auth.user.username}, 내용을 작성해 주세요`}
                         onChange={e => setContent(e.target.value)}
                         style={{
                             filter: theme ? 'invert(1)' : 'invert(0)',
@@ -191,7 +191,7 @@ const StatusModal = () => {
 
                 <div className="status_footer">
                     <button className="btn btn-secondary w-100" type="submit">
-                        Post
+                        게시
                     </button>
                 </div>
 
