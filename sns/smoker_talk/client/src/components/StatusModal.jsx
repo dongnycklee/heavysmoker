@@ -23,10 +23,10 @@ const StatusModal = () => {
         let newImages = []
 
         files.forEach(file => {
-            if (!file) return err = "File does not exist."
+            if (!file) return err = "파일이 존재하지 않습니다."
 
             if (file.size > 1024 * 1024 * 5) {
-                return err = "The image/video largest is 5mb."
+                return err = "이미지/비디오를 5MB 이내로 해주세요."
             }
 
             return newImages.push(file)
