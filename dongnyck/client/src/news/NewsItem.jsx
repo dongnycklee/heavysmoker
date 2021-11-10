@@ -1,15 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const NewsItemBlock = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .thumbnail {
     margin-right: 1rem;
     img {
       display: block;
-      width: 160px;
-      height: 100px;
+      width: 260px;
+      height: 150px;
       object-fit: cover;
     }
   }

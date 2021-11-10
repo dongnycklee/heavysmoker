@@ -4,6 +4,7 @@ import { create } from "./apiPost";
 import { isAuthenticated } from "../auth";
 import Loading from "../loading/Loading";
 import { Redirect } from "react-router-dom";
+import "../css/button.css";
 
 class NewPost extends Component {
   constructor() {
@@ -88,7 +89,7 @@ class NewPost extends Component {
   newPostForm = (title, body) => (
     <form>
       <div className="form-group">
-        <label className="text-muted">Photo</label>
+        <label className="text-muted">사진파일</label>
         <input
           onChange={this.handleChange}
           name="photo"
@@ -98,7 +99,7 @@ class NewPost extends Component {
         />
       </div>
       <div className="form-group">
-        <label className="text-muted">Title</label>
+        <label className="text-muted">제목</label>
         <input
           onChange={this.handleChange}
           name="title"
@@ -108,7 +109,7 @@ class NewPost extends Component {
         />
       </div>
       <div className="form-group">
-        <label className="text-muted">Body</label>
+        <label className="text-muted">내용</label>
         <textarea
           onChange={this.handleChange}
           type="text"
@@ -118,8 +119,12 @@ class NewPost extends Component {
         />
       </div>
 
-      <button onClick={this.clickSubmit} className="btn btn-raised btn-primary">
-        Create Post
+      <button className="btna" onClick={this.clickSubmit}>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        업로드
       </button>
     </form>
   );
@@ -132,7 +137,7 @@ class NewPost extends Component {
 
     return (
       <div className="container">
-        <h2 className="mt-5 mb-5">Create a new post</h2>
+        <h2 className="mt-5 mb-5">글작성</h2>
         <div
           className="alert alert-danger"
           style={{ display: error ? "" : "none" }}

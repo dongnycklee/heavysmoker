@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import NewsItem from './NewsItem';
-import axios from 'axios';
-import usePromise from './usePromise';
+import React from "react";
+import styled from "styled-components";
+import NewsItem from "./NewsItem";
+import axios from "axios";
+import usePromise from "./usePromise";
 
 const NewsListBlock = styled.div`
   box-sizing: border-box;
@@ -14,12 +14,15 @@ const NewsListBlock = styled.div`
     width: 100%;
     padding-left: 1rem;
     padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 `;
 
 const NewsList = ({ category }) => {
   const [loading, response, error] = usePromise(() => {
-    const query = category === 'all' ? '' : `&category=${category}`;
+    const query = category === "all" ? "" : `&category=${category}`;
     return axios.get(
       `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=e3ddfac30a2a42bd860e22ca8d1042f7`
     );

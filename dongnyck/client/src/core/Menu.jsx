@@ -1,14 +1,15 @@
-import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { left } from "glamor";
+import React from "react";
+import { Link, withRouter } from "react-router-dom";
 
-import { signout, isAuthenticated } from '../auth';
-import './menu.css';
+import { signout, isAuthenticated } from "../auth";
+import "./menu.css";
 
 const isActive = (history, path) => {
   if (history.location.pathname === path) {
-    return { borderBottom: '4px solid #ff9900', color: 'white' };
+    return { borderBottom: "4px solid #ff9900", color: "white" };
   } else {
-    return { color: '#ffffff' };
+    return { color: "#ffffff" };
   }
 };
 
@@ -17,23 +18,24 @@ const Menu = (props) => (
     className="navbar navbar-expand-lg navbar-dark p-0 m-0 pr-2"
     style={{
       // background: '#646464',
-      background: 'black',
-      paddingTop: '15px',
-      paddingBottom: '0',
-      marginBottom: '50px',
+      background: "black",
+      paddingTop: "15px",
+      paddingBottom: "0",
+      marginBottom: "50px",
     }}
   >
     <a
       className="navbar-brand"
       style={{
-        color: 'white',
-        fontFamily: 'Courgette, cursive',
+        color: "white",
+        fontFamily: "Courgette, cursive",
       }}
       href="/main"
     >
       <img
         src="https://i.esdrop.com/d/cl3pewp2aooj/IhK3lMNIhJ.png"
-        style={{ width: '150px' }}
+        className="mainlogo"
+        style={{ width: "150px", padding: "0px" }}
       />
     </a>
     <button
@@ -52,7 +54,7 @@ const Menu = (props) => (
         <li className="nav-item ">
           <Link
             className="nav-link"
-            style={isActive(props.history, '/main')}
+            style={isActive(props.history, "/main")}
             to="/main"
           >
             <i className="fas fa-home mr-1"></i>메뉴
@@ -63,16 +65,16 @@ const Menu = (props) => (
             <li className="nav-item">
               <Link
                 className="nav-link"
-                style={isActive(props.history, '/news')}
+                style={isActive(props.history, "/news")}
                 to="/news"
               >
-                <i class="fas fa-newspaper"></i>뉴스
+                <i class="fas fa-newspaper"></i> 뉴스
               </Link>
             </li>
             <li className="nav-item">
               <Link
                 className="nav-link"
-                style={isActive(props.history, '/')}
+                style={isActive(props.history, "/")}
                 to="/"
               >
                 <i className="fas fa-sign-in-alt mr-1"></i>로그인
@@ -81,7 +83,7 @@ const Menu = (props) => (
             <li className="nav-item">
               <Link
                 className="nav-link"
-                style={isActive(props.history, '/signup')}
+                style={isActive(props.history, "/signup")}
                 to="/signup"
               >
                 <i className="fas fa-user-plus mr-1"></i>회원가입
@@ -94,7 +96,7 @@ const Menu = (props) => (
             <li className="nav-item">
               <Link
                 className="nav-link"
-                style={isActive(props.history, '/news')}
+                style={isActive(props.history, "/news")}
                 to="/news"
               >
                 <i class="fas fa-newspaper"></i>뉴스
@@ -103,8 +105,8 @@ const Menu = (props) => (
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to={'/findpeople'}
-                style={isActive(props.history, '/findpeople')}
+                to={"/findpeople"}
+                style={isActive(props.history, "/findpeople")}
               >
                 <i className="fas fa-users mr-1"></i>전체 유저
               </Link>
@@ -113,15 +115,15 @@ const Menu = (props) => (
             <li className="nav-item">
               <Link
                 className="nav-link"
-                to={'/post/create'}
-                style={isActive(props.history, '/post/create')}
+                to={"/post/create"}
+                style={isActive(props.history, "/post/create")}
               >
                 <i className="fas fa-plus mr-1"></i>글쓰기
               </Link>
             </li>
             <div className="dropdown">
               <button
-                style={{ color: '#fff' }}
+                style={{ color: "#fff" }}
                 className="btn btn-secondary dropdown-toggle"
                 type="button"
                 id="dropdownMenuButton"
@@ -150,8 +152,8 @@ const Menu = (props) => (
                 </Link>
                 <span
                   className="dropdown-item"
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => signout(() => props.history.push('/'))}
+                  style={{ cursor: "pointer" }}
+                  onClick={() => signout(() => props.history.push("/"))}
                 >
                   <i className="fas fa-sign-out-alt mr-1"></i>로그아웃
                 </span>
