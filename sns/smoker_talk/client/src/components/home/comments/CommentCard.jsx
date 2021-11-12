@@ -104,8 +104,8 @@ const CommentCard = ({ children, comment, post, commentId }) => {
                 {content.length < 100
                   ? content
                   : readMore
-                  ? content + " "
-                  : content.slice(0, 100) + "...."}
+                    ? content + " "
+                    : content.slice(0, 100) + "...."}
               </span>
               {content.length > 100 && (
                 <span
