@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import styles from "./first.module.css";
-import video from "../../videos/gogo.mp4";
-import { Redirect } from "react-router-dom";
+import React, { Component } from 'react';
+import styles from './first.module.css';
+import video from '../../videos/gogo.mp4';
+import { Redirect } from 'react-router-dom';
 
 class First extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 5, // initialState 5초
+      count: 3, // initialState 5초
     };
     this.counter = this.counter.bind(this);
     this.timer = this.timer.bind(this);

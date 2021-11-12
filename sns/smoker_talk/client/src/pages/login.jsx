@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { login } from "../redux/actions/authAction";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { login } from '../redux/actions/authAction';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Login = () => {
-  const initialState = { email: "", password: "" };
+  const initialState = { email: '', password: '' };
   const [userData, setUserData] = useState(initialState);
   const { email, password } = userData;
 
@@ -15,7 +15,7 @@ const Login = () => {
   const history = useHistory();
 
   useEffect(() => {
-    if (auth.token) history.push("/main");
+    if (auth.token) history.push('/main');
   }, [auth.token, history]);
 
   const handleChangeInput = (e) => {
@@ -55,7 +55,7 @@ const Login = () => {
 
           <div className="pass">
             <input
-              type={typePass ? "text" : "password"}
+              type={typePass ? 'text' : 'password'}
               className="form-control"
               id="exampleInputPassword1"
               onChange={handleChangeInput}
@@ -64,7 +64,7 @@ const Login = () => {
             />
 
             <small onClick={() => setTypePass(!typePass)}>
-              {typePass ? "숨기기" : "보기"}
+              {typePass ? '숨기기' : '보기'}
             </small>
           </div>
         </div>
@@ -78,8 +78,8 @@ const Login = () => {
         </button>
 
         <p className="my-2">
-          회원이 아니신가요?{" "}
-          <Link to="/register" style={{ color: "crimson" }}>
+          회원이 아니신가요?{' '}
+          <Link to="/register" style={{ color: 'crimson' }}>
             회원가입
           </Link>
         </p>
