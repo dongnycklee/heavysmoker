@@ -29,7 +29,7 @@ class First extends Component {
       return <Redirect to="/main" />;
     }
     return (
-      <div>
+      <div className={styles.splash}>
         <video muted autoPlay className={styles.first}>
           <source src={video} type="video/mp4" />
         </video>
