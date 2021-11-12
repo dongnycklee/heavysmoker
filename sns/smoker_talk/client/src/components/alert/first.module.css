@@ -6,8 +6,7 @@
   z-index: auto;
   overflow: hidden;
   margin-top: 100px;
-  background-color: #111;
-  object-fit: fill;
+  background-color: black;
 }
 
 .splash {
