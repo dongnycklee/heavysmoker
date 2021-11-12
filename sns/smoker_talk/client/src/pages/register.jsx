@@ -176,6 +176,33 @@ const Register = () => {
           </label>
         </div>
 
+        <div className="row justify-content-between mx-0 mb-1">
+          <label htmlFor="privacy">개인정보처리취급방침</label>
+          <label htmlFor="confirm">
+            동의함:{' '}
+            <input
+              type="radio"
+              id="agree"
+              name="agree"
+              value="agree"
+              defaultChecked
+              onChange={handleChangeInput}
+            />
+          </label>
+
+          <label htmlFor="female">
+            동의안함:{' '}
+            <input
+              type="radio"
+              id="disagree"
+              name="disagree"
+              value="disagree"
+              onChange={handleChangeInput}
+            />
+          </label>
+          <button onClick={() => window.open('https://gangstertalk.herokuapp.com/privacy.html', '_blank')}>자세히 보기</button>
+        </div>
+
         <button type="submit" className="btn btn-dark w-100">
           회원가입
         </button>
