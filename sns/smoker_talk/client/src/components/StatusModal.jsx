@@ -121,9 +121,9 @@ const StatusModal = () => {
                         placeholder={`${auth.user.username}, 내용을 작성해 주세요`}
                         onChange={e => setContent(e.target.value)}
                         style={{
-                            filter: theme ? 'invert(0)' : 'invert(1)',
-                            color: theme ? '#111' : 'white',
-                            background: theme ? '' : 'rgba(0,0,0,.03)',
+                            filter: theme ? 'invert(1)' : 'invert(0)',
+                            color: theme ? 'white' : '#111',
+                            background: theme ? 'rgba(0,0,0,.03)' : '',
                         }} />
 
                     <div className="d-flex">
