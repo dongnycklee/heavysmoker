@@ -8,9 +8,12 @@ import {
   MESS_TYPES,
   getConversations,
 } from "../../redux/actions/messageAction";
+import FollowBtn from "../FollowBtn";
+import { getSuggestions } from "../../redux/actions/suggestionsAction";
+import LoadIcon from "../../images/loading.gif";
 
-const LeftSide = () => {
-  const { auth, message, online } = useSelector((state) => state);
+const LeftSide = ({ users, setShowFollowing }) => {
+  const { auth, message, online, suggestions } = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const [search, setSearch] = useState("");
@@ -93,7 +96,7 @@ const LeftSide = () => {
         <input
           type="text"
           value={search}
-          placeholder="닉네임으로 검색..."
+          placeholder="닉네임으로 검색...(공백 검색시 모든유저)"
           onChange={(e) => setSearch(e.target.value)}
         />
 
@@ -101,7 +104,16 @@ const LeftSide = () => {
           Search
         </button>
       </form>
-
+      <div className="d-flex justify-content-between align-items-center my-2">
+        <h5 className="text-danger">지금 바로 채팅을 시작해보세요</h5>
+        {!suggestions.loading && (
+          <i
+            className="fas fa-redo"
+            style={{ cursor: "pointer" }}
+            onClick={() => dispatch(getSuggestions(auth.token))}
+          />
+        )}
+      </div>
       <div className="message_chat_list">
         {searchUsers.length !== 0 ? (
           <>
@@ -138,7 +150,7 @@ const LeftSide = () => {
         )}
 
         <button ref={pageEnd} style={{ opacity: 0 }}>
-          Load More
+          더 보기
         </button>
       </div>
     </>
