@@ -9,7 +9,7 @@ import { getSuggestions } from "../../redux/actions/suggestionsAction";
 const RightSideBar = ({ users, setShowFollowing }) => {
   const { auth, suggestions } = useSelector((state) => state);
   const dispatch = useDispatch();
-
+  console.log(users);
   return (
     <div className="mt-3">
       <UserCard user={auth.user} />
@@ -36,6 +36,7 @@ const RightSideBar = ({ users, setShowFollowing }) => {
           ))}
         </div>
       )}
+
       {/* <div className="follow_content">
         {users.map((user) => (
           <UserCard
