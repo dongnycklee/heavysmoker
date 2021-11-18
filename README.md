@@ -162,6 +162,50 @@ Member.
 
 실시간 사용자들끼리의  채팅이기에 socket.id를 사용하는 1:1 채팅을 구현했음. socket.io 특성 상 사용자 지정에 대한 이해도 숙지  
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+**Postman 우채배달부를 통하여 api작업 확인 **
+
+register / login / logout / delete를 서버단을 구축 그 후 postman을 사용하여 작업확인
+
+router
+
+<img width="400" src="https://user-images.githubusercontent.com/89626182/142386449-7d12a7c8-1fff-4b7e-a7a7-d2a405d488fd.png">
+
+register
+
+<img width="400" src="https://user-images.githubusercontent.com/89626182/142386968-251ce740-8cb7-4e76-a187-d07a3debd8b0.png">
+
+                      
+login
+
+<img width="400" src="https://user-images.githubusercontent.com/89626182/142387105-2186ad0e-9815-4ced-880b-dbe0d01a7aba.png">
+
+logout
+
+<img width="400" src="https://user-images.githubusercontent.com/89626182/142387231-493ab484-a618-400c-8e5c-d4e2860d7ecb.png">
+
+delete
+
+<img width="400" src="https://user-images.githubusercontent.com/89626182/142387326-5b5217a6-c163-45a3-b6f2-bee18298d636.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 데이터베이스 AWS EC2방식 체택 인스턴스 생성후 키값생성 후
 서버 연결
