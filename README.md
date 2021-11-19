@@ -168,26 +168,43 @@ Member.
 
 register / login / logout / delete를 서버단을 구축 그 후 postman을 사용하여 작업확인
 
-router
+router는 이렇게 설정해주었고 
 
 <img width="400" src="https://user-images.githubusercontent.com/89626182/142386449-7d12a7c8-1fff-4b7e-a7a7-d2a405d488fd.png">
+
+이제 각 라우터 마다 우체부에 보내는것을 보여줄것이다.
 
 register
 
 <img width="400" src="https://user-images.githubusercontent.com/89626182/142386968-251ce740-8cb7-4e76-a187-d07a3debd8b0.png">
 
+postman register
+<img width="400" src="https://user-images.githubusercontent.com/89626182/142539192-d15f5783-71a8-4d56-8126-c396d2c8aa3e.png">
+
+                      
                       
 login
 
 <img width="400" src="https://user-images.githubusercontent.com/89626182/142387105-2186ad0e-9815-4ced-880b-dbe0d01a7aba.png">
 
+postman login
+<img width="400" src="https://user-images.githubusercontent.com/89626182/142541240-c5d47524-d400-42f6-af51-96f9e886e235.png">
+
+
 logout
 
 <img width="400" src="https://user-images.githubusercontent.com/89626182/142387231-493ab484-a618-400c-8e5c-d4e2860d7ecb.png">
 
+postman logout
+<img width="400" src="https://user-images.githubusercontent.com/89626182/142542894-02b00f6b-5ac5-4848-ae68-98a87dde9e26.png">
+
+
 delete
 
 <img width="400" src="https://user-images.githubusercontent.com/89626182/142387326-5b5217a6-c163-45a3-b6f2-bee18298d636.png">
+
+postman delete
+<img width="400" src="https://user-images.githubusercontent.com/89626182/142543816-78ee1307-a15c-4e04-bd87-3605e90d0a75.png">
 
 
 
