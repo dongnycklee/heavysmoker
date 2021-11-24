@@ -211,22 +211,36 @@ socketServer에서 .emit한 User.id, likes, follow, comments, Notification, Mess
 이 밑 부분부터는 React에서 각 Component를 아까 Server단에서 셋팅한 socket.io를 어떻게 활용했는지 코드와 데모를 보여드리겠습니다.
 
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143276066-cc86fd8b-0181-4a8a-9038-47f8de4f70e9.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143277445-b3fd636d-49ae-45be-b90d-10d2c4e08d4f.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143277434-9c604d97-d942-4936-ad02-f25d3d35063b.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143277437-fb108bcc-3482-4797-bfb5-1f5faf6a9341.png">
 
 기본적으로 스페이스바를 누르고 검색 시 모든 유저를 검색할 수 있으며, 사용자의 닉네임으로 따로 연락하고 싶은 사람과 연락을 할 수 있습니다.
 해당 유저가 접속해 있는지 알 수 있는 유저 옆에 동그라미에 초록불이 들어오게끔 확인할 수 있으며 유저가 많으면 더보기를 통해 더 볼 수 있게끔 하였습니다.
 
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143276087-bda9f6b9-b12e-4172-b92f-01b5a448fd41.png">
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143276097-ec533a6f-f6e2-43eb-a19a-ff0718b7c4de.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143277938-4a50cf34-60c0-49af-a215-a0057afd66dc.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143277947-fb34995f-3369-4134-bf00-e7a13b5ad9fb.png">
 
 상대와 실시간으로 대화할 수 있으며 대화 내용이 DB에 저장이 되고, 상대방의 프로필 이미지, 보낸 시각, 대화내용이 화면 고정되지 않고 자동 스크롤 됩니다.
 
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143276110-27b41540-d519-474c-8c7a-c74afd58ab5d.png">
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143276118-309ab07b-a63d-4c30-aa67-ce853a407f11.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143278517-03f96371-623d-4e21-b096-940ac0db3aaa.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143278523-8a328365-fd4b-4c38-b6b6-aedee81aeff8.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143278526-774d70ff-0a79-4924-864a-7e284c5973ce.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143278529-f25ce36d-1bf8-49fb-964d-36a6cc8a1a69.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143278531-8e43401f-ab4c-4283-a420-04c2b1382c6f.png">
 
 WebRTC의 video, call, stream 기능을 활용하였으며 socket 서버를 통하지 않고 Peer.js의 P2P 기능을 활용하였기에 속도부분에서 빠르게 이용할 수 있게 하였지만,
 단점으로 구글에서 오픈소스로 제공한 것이라 크롬에서는 작동이 잘 되지만 adapter.js 같은 라이브러리가 없이는 다양한 브라우저(사파리, 익스플로러 등) 에서 호환이 되지 않아 아쉬움이 있습니다.
 
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143276162-a2d13e4c-ec18-4d3d-b861-71b8bae5dd38.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143279048-71eb9c98-a7d4-42f8-bcb4-1cd2bfdcef2e.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143279055-759c0be3-9e5a-4ccb-a749-d5528cad44f3.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143279059-3184b1e3-42a0-4d3d-800c-2848d0696bc3.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143279060-8ba902e9-0601-4dd8-bd0e-ae4a3822f6b6.png">
 
 채팅 부분에서 이모지, 사진전송, 위에 나왔던 음성, 영상 전화 버튼 기능을 추가하였습니다.
 이미지 전송시 사진은 최대 1024*1024로 고정되며 파일크기는 5mb 이상을 보낼 수 없게 하였습니다.
