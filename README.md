@@ -85,7 +85,7 @@ Member.
 - 검색 결과 데이터 요청 및 출력 : `jQuery` `Ajax` `JSON` `axios`
 - DB 액션 처리 : `MongoDB`
 - DBMS : `MongoDB`
-- 개발 Tool :`Cloudinary``Visual Studio Code` `Atom`
+- 개발 Tool :`Cloudinary` `Visual Studio Code` `Docker`
 - Heroku 배포 : `GitHub` `MongoDB` `Heroku`
 - 로그인 Api : `MongoDB`
 - 채팅  : `WebRTC`
