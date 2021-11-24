@@ -81,12 +81,12 @@ Member.
 
 ### 사용한 기술
 
-- 웹 화면 구성 : `HTML5` `CSS3` `bootstrap` `JavaScript``Scss``React`
-- 검색 결과 데이터 요청 및 출력 : `jQuery` `Ajax` `JSON``axios`
+- 웹 화면 구성 : `HTML5` `CSS3` `bootstrap` `JavaScript` `Scss` `React`
+- 검색 결과 데이터 요청 및 출력 : `jQuery` `Ajax` `JSON` `axios`
 - DB 액션 처리 : `MongoDB`
 - DBMS : `MongoDB`
 - 개발 Tool :`Cloudinary``Visual Studio Code` `Atom`
-- AWS 배포 : `EC2` `MongoDB`
+- Heroku 배포 : `GitHub` `MongoDB` `Heroku`
 - 로그인 Api : `MongoDB`
 - 채팅  : `WebRTC`
 - 프레임워크 : `NodeJs`
@@ -151,26 +151,10 @@ Member.
 
 [해결] 서버의 순서도를 재배치 함으로써 문제 해결
 
-- socket.id와 idx
-
-[상황] 특정 사용자에게 메세지를 보내려면 해당 사용자의 socket.id를 알아야 함
-
-[문제] socket.id는 브라우저를 킬 때마다 새롭게 생성됨, 고유한 key가 되지 못함
-
-[해결] 해당 회원을 식별할 수 있는 idx 값을 활용:  idx값을 속성이름으로 추가, 그 속성의 값은 소켓의 ID값으로 할당함
-
-- connected
-
-[상황] 'ooo님이 채팅방에 입장/퇴장 하셨습니다' 기능을 추가해야함
-
-[문제] 시간 부족으로 인해 미완성
-
-[해결]  나중에 보안 할 예정
 
 **NodeJs socket.io 깨달은 점 **
 
 실시간 사용자들끼리의  채팅이기에 socket.id를 사용하는 1:1 채팅을 구현했음. socket.io 특성 상 사용자 지정에 대한 이해도 숙지  
-
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -376,8 +360,5 @@ form 태그 사용 물품의 가격 이름 브랜드 등
 ### 프로젝트 기획안 PPT
 [구글 프레젠테이션 파일](https://docs.google.com/presentation/d/1OXVmXrEVzpxmP-WIhmVdoelkYk0yFbY2/edit?usp=sharing&ouid=116791032032435384891&rtpof=true&sd=true)
 
-# 시연 영상
-[유튜브첫페이지 전반적인 틀,index 영상](https://www.youtube.com/watch?v=FMPbevKqxzo)    
-[유튜브시연영상1](https://www.youtube.com/watch?v=tTzy22FIxdk)    
-[유튜브시연영상2](https://www.youtube.com/watch?v=OSPGKf2z3MY)    
+# 시연 영상  
 
