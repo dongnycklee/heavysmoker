@@ -208,6 +208,7 @@ App.jsx에서 Peer를 설정하고 보낼 데이터(payload)를 socket으로 지
 socketServer에서 .emit한 User.id, likes, follow, comments, Notification, Message 등을 .on으로 socketclient에서 받는걸 보임
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 이 밑 부분부터는 React에서 각 Component를 아까 Server단에서 셋팅한 socket.io를 어떻게 활용했는지 코드와 데모를 보여드리겠습니다.
 
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143276066-cc86fd8b-0181-4a8a-9038-47f8de4f70e9.png">
@@ -223,7 +224,7 @@ socketServer에서 .emit한 User.id, likes, follow, comments, Notification, Mess
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143277938-4a50cf34-60c0-49af-a215-a0057afd66dc.png">
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143277947-fb34995f-3369-4134-bf00-e7a13b5ad9fb.png">
 
-상대와 실시간으로 대화할 수 있으며 대화 내용이 DB에 저장이 되고, 상대방의 프로필 이미지, 보낸 시각, 대화내용이 화면 고정되지 않고 자동 스크롤 됩니다.
+상대와 실시간으로 대화할 수 있으며 대화 내용, 보낸 시각이 DB에 저장이 되고, 대화 내용 화면이 고정되지 않고 자동 스크롤 됩니다.
 
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143276110-27b41540-d519-474c-8c7a-c74afd58ab5d.png">
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143276118-309ab07b-a63d-4c30-aa67-ce853a407f11.png">
