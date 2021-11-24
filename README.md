@@ -176,11 +176,10 @@ Member.
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 데이터베이스 서버 연결
-<img width="400" alt="41" src="https://user-images.githubusercontent.com/89692626/137617959-d52e400d-d98f-4f6d-a035-948354a394ad.png">
-<img width="400" alt="42" src="https://user-images.githubusercontent.com/89692626/137617960-c55d109a-dad6-4357-9c5f-87e25edac9dd.png">
-<img width="400" alt="43" src="https://user-images.githubusercontent.com/89692626/137617961-14e02f5a-e202-41a7-9035-75bd4fd9eadd.png">
-<img width="400" alt="44" src="https://user-images.githubusercontent.com/89692626/137617962-37868599-b3c1-4225-b012-1d4a30439032.png">
 
+
+<img width="400" alt="41" src="https://user-images.githubusercontent.com/89625961/143173043-3685bb86-4e7f-4c08-9732-5fb8b5049e2e.png">
+<img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143173040-82c9f691-4bef-48e6-96e8-8490380668d2.png">
 
 데이터베이스 MongoDB Atlas 서버 연결
 
