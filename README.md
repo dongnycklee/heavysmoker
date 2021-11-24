@@ -85,13 +85,14 @@ Member.
 - 검색 결과 데이터 요청 및 출력 : `jQuery` `Ajax` `JSON``axios`
 - DB 액션 처리 : `MongoDB`
 - DBMS : `MongoDB`
-- 개발 Tool :`PostMan``Visual Studio Code` `Atom`
+- 개발 Tool :`Cloudinary``Visual Studio Code` `Atom`
 - AWS 배포 : `EC2` `MongoDB`
-- 로그인 Api : `KakaoTalk API``Google API`
-- 채팅 Api : `Gitpull`
+- 로그인 Api : `MongoDB`
+- 채팅  : `WebRTC`
 - 프레임워크 : `NodeJs`
 - 프로젝트 관리 Tool : `Google Drive` `GitHub`
-- 사용 모듈(v) : Server: ` "bcrypt": "^5.0.0",
+- 사용 모듈(v) : 
+-   Server: ` "bcrypt": "^5.0.0",
     "concurrently": "^6.0.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
@@ -101,6 +102,7 @@ Member.
     "mongoose": "^5.11.13",
     "peer": "^0.6.1",
     "socket.io": "^3.1.2"`
+    
     Back: `"@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
@@ -124,26 +126,26 @@ Member.
 - 회원가입 : `MongoDB`
 - 회원정보변경 :`MongoDB`
 - 마이페이지 : `MongoDB`
-- 실시간채팅:`socket.io``WebRTC``Peer.js`
+- 실시간채팅:`socket.io, WebRTC, Peer.js`
 
 
 
 
 
-- Socket.io 의 ngrock 서버문제
+- Socket.io 의 WebRTC 문제
 
-[상황] ngrock의 문제
+[상황] WebRTC의 문제
 
-[문제] ngrock 이 최대 3명만가능해서 채팅기능이 3명이상 채팅이불가능했던 문제
+[문제] WebRTC가 Web에서는 작동이 되지만 Mobile에서는 음성 및 영상 채팅이 불가능했던 문제
 
-[해결] ec2서버를열때 rgrock 을 사용하지않고 소켓을 자체적으로 서버를 열어서 인크루드방식으로 바꿈으로서 대량의인원도 문제없도록 해결함
+[해결] 못함.
 
 
 ### "NodeJs ,Socket.IO 를 통해 실시간 통신을 구현"
 
 - 실시간 채팅 구현
 
-[상황] 사용자들끼리 실시간 쇼핑관련 소통을하기위한 채팅
+[상황] 사용자들끼리 실시간 소통을 하기위한 채팅
 
 [문제] socket.io서버 를 코드에 추가할 떄 오류 발생
 
@@ -169,87 +171,23 @@ Member.
 
 실시간 사용자들끼리의  채팅이기에 socket.id를 사용하는 1:1 채팅을 구현했음. socket.io 특성 상 사용자 지정에 대한 이해도 숙지  
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-**Postman 우채배달부를 통하여 api작업 확인 **
-
-register / login / logout / delete를 서버단을 구축 그 후 postman을 사용하여 작업확인
-
-router는 이렇게 설정해주었고 
-
-<img width="400" src="https://user-images.githubusercontent.com/89626182/142386449-7d12a7c8-1fff-4b7e-a7a7-d2a405d488fd.png">
-
-이제 각 라우터 마다 우체부에 보내는것을 보여줄것이다.
-
-register
-
-<img width="400" src="https://user-images.githubusercontent.com/89626182/142386968-251ce740-8cb7-4e76-a187-d07a3debd8b0.png">
-
-postman register
-
-<img width="400" src="https://user-images.githubusercontent.com/89626182/142539192-d15f5783-71a8-4d56-8126-c396d2c8aa3e.png">
-
-                      
-                      
-login
-
-<img width="400" src="https://user-images.githubusercontent.com/89626182/142387105-2186ad0e-9815-4ced-880b-dbe0d01a7aba.png">
-
-postman login
-
-<img width="400" src="https://user-images.githubusercontent.com/89626182/142541240-c5d47524-d400-42f6-af51-96f9e886e235.png">
-
-
-logout
-
-<img width="400" src="https://user-images.githubusercontent.com/89626182/142387231-493ab484-a618-400c-8e5c-d4e2860d7ecb.png">
-
-postman logout
-
-<img width="400" src="https://user-images.githubusercontent.com/89626182/142542894-02b00f6b-5ac5-4848-ae68-98a87dde9e26.png">
-
-
-delete
-
-<img width="400" src="https://user-images.githubusercontent.com/89626182/142387326-5b5217a6-c163-45a3-b6f2-bee18298d636.png">
-
-postman delete
-
-<img width="400" src="https://user-images.githubusercontent.com/89626182/142543816-78ee1307-a15c-4e04-bd87-3605e90d0a75.png">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-데이터베이스 AWS EC2방식 체택 인스턴스 생성후 키값생성 후
-서버 연결
+데이터베이스 서버 연결
 <img width="400" alt="41" src="https://user-images.githubusercontent.com/89692626/137617959-d52e400d-d98f-4f6d-a035-948354a394ad.png">
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89692626/137617960-c55d109a-dad6-4357-9c5f-87e25edac9dd.png">
 <img width="400" alt="43" src="https://user-images.githubusercontent.com/89692626/137617961-14e02f5a-e202-41a7-9035-75bd4fd9eadd.png">
 <img width="400" alt="44" src="https://user-images.githubusercontent.com/89692626/137617962-37868599-b3c1-4225-b012-1d4a30439032.png">
 
 
-데이터베이스 AWS EC2방식 체택 인스턴스 생성후 키값생성 후
-서버 연결
+데이터베이스 MongoDB Atlas 서버 연결
 
-AWS의 RDS로 데이터베이스를 공유하여 협업하여 프로젝트를 진행하였고
-AWS의 EC2를 활용하여 배포를 하였습니다
+MongoDB Atlas로 데이터베이스를 공유하여 협업하여 프로젝트를 진행하였고
+HerokuApp을 활용하여 배포를 하였습니다
 
-서버 연결하기 전 SCREEN을 활용 cmd창을 닫거나 컴퓨터를 종료하여도 서버가 계속 돌아가게 유지했습니다
+컴퓨터를 종료하여도 서버가 계속 돌아가게 유지했습니다
 
 
 
