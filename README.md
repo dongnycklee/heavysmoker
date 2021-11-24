@@ -160,6 +160,7 @@ ID만 있으면 피어는 원격 피어에 대한 P2P 데이터 또는 미디어
 크게 이 2개의 모듈을 사용하여 작업을 진행하였으며, 세부적인 설명 들어가겠습니다.
 
 server단과 client단을 나누어 설명하겠습니다.
+
 <img width="400" alt="41" src="https://user-images.githubusercontent.com/89625961/143272229-502f4260-556e-4ef7-a083-6dd1895bc5af.png">
 
 채팅 내용을 저장하기 위해 데이터 베이스도 연결하였으며 사용한 DB는 MONGODB입니다.
@@ -170,12 +171,15 @@ server단과 client단을 나누어 설명하겠습니다.
 DB에 모델링은 위와 같이 하였습니다
 
 socketServer.js는 콜백함수로 .emit 로 보내고 .on으로 받습니다. User.id 값을 include로 받아 똑같이 콜백함수로 보내고 받습니다.
+
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143272841-d039cd55-639d-42a2-9ba4-0c97c2f8e030.png">
 
 첫 번째로 클라이언트가 접속할 때와 접속을 끊었을 때 구별하는 셋팅과 좋아요 셋팅입니다.
+
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143272845-02f7ca38-f8bd-49d8-9171-aa0aefc74024.png">
 
 두 번째로 댓글, 팔로우, 알림, 메시지 셋팅입니다.
+
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143272848-cc5fa022-4b7c-47ed-8595-e5dd506a9b6e.png">
 
 세 번째로 유저 온오프 확인, WebRTc의 전화 셋팅입니다.
@@ -187,6 +191,7 @@ socketServer.js는 콜백함수로 .emit 로 보내고 .on으로 받습니다. U
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143273944-4f14c59f-0b44-41d3-a710-d5b3e72eb463.png">
 
 class로 APIfeatures 생성자와 페이징 셋팅 및 메시지 생성 및 대화 받는 function
+
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143273949-4c83ab36-8db4-48ce-bb1a-76d932fb54d4.png">
 
 메시지 받기, 메시지 삭제, 대화 삭제 function 셋팅
@@ -201,6 +206,21 @@ App.jsx에서 Peer를 설정하고 보낼 데이터(payload)를 socket으로 지
 <img width="400" alt="42" src="https://user-images.githubusercontent.com/89625961/143275005-fd8b4383-506e-46d9-84ee-ebf63e55f6a6.png">
 
 socketServer에서 .emit한 User.id, likes, follow, comments, Notification, Message 등을 .on으로 socketclient에서 받는걸 보임
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+이 밑 부분부터는 React에서 각 Component를 아까 Server단에서 셋팅한 socket.io를 어떻게 활용했는지 코드와 데모를 보여드리겠습니다.
+
+![image](https://user-images.githubusercontent.com/89625961/143276066-cc86fd8b-0181-4a8a-9038-47f8de4f70e9.png)
+
+![image](https://user-images.githubusercontent.com/89625961/143276087-bda9f6b9-b12e-4172-b92f-01b5a448fd41.png)
+![image](https://user-images.githubusercontent.com/89625961/143276097-ec533a6f-f6e2-43eb-a19a-ff0718b7c4de.png)
+
+![image](https://user-images.githubusercontent.com/89625961/143276110-27b41540-d519-474c-8c7a-c74afd58ab5d.png)
+![image](https://user-images.githubusercontent.com/89625961/143276118-309ab07b-a63d-4c30-aa67-ce853a407f11.png)
+
+![image](https://user-images.githubusercontent.com/89625961/143276162-a2d13e4c-ec18-4d3d-b861-71b8bae5dd38.png)
+
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
