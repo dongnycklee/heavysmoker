@@ -91,33 +91,40 @@ Member.
 - 채팅 Api : `Gitpull`
 - 프레임워크 : `NodeJs`
 - 프로젝트 관리 Tool : `Google Drive` `GitHub`
-- 사용 모듈(v) : ` "axios": "^0.22.0",
-                "bcrypt": "^5.0.1",
-                "bootpay-js": "^3.3.3",
-                "cookie-parser": "^1.4.5",
-                "dotenv": "^10.0.0",
-                "express": "^4.17.1",
-                "express-session": "^1.17.2",
-                "moment": "^2.29.1",
-                "morgan": "^1.10.0",
-                "multer": "^1.4.3",
-                "mysql": "^2.18.1",
-                "mysql2": "^2.3.0",
-                "nodemon": "^2.0.13",
-                "nunjucks": "^3.2.3",
-                "passport": "^0.5.0",
-                "passport-kakao": "^1.0.1",
-                "passport-local": "^1.0.0",
-                "sequelize": "^6.6.5",
-                "sequelize-cli": "^6.2.0",
-                "socket.io": "^4.2.0"`
+- 사용 모듈(v) : Server: ` "bcrypt": "^5.0.0",
+    "concurrently": "^6.0.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.13",
+    "peer": "^0.6.1",
+    "socket.io": "^3.1.2"`
+    Back: `"@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.3",
+    "@testing-library/user-event": "^12.6.2",
+    "axios": "^0.21.1",
+    "moment": "^2.29.1",
+    "peerjs": "^1.3.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-share": "^4.3.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "socket.io-client": "^3.1.2",
+    "web-vitals": "^0.2.4"`
 ### 주요 기능
 
-- 로그인 : 일반 로그인, `MongoDB``passport``Compass`
-- 회원가입 : `MongoDB` `passport``Compass`
-- 회원정보변경 :`MongoDB` `passport``Compass`
-- 마이페이지 : `MongoDB```mysql`
-- 실시간채팅:`socket.io``rg.rok`
+- 로그인 : 일반 로그인, `MongoDB`
+- 회원가입 : `MongoDB`
+- 회원정보변경 :`MongoDB`
+- 마이페이지 : `MongoDB`
+- 실시간채팅:`socket.io``WebRTC``Peer.js`
 
 
 
