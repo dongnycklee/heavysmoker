@@ -444,13 +444,13 @@ CommentCard: 댓글 frame 구성. 수정 및 답글 입력 시 리렌더링
 
 CommentMenu:   클릭 시 수정, 지우기 기능
 
-CommentDisplay: <CommentCard>, <CommentMenu> 컴포넌트를 브라우저에 보여준다
+CommentDisplay: CommentCard, CommentMenu 컴포넌트를 브라우저에 보여준다
   
 답글
   
 <img width="400" alt="hh" src="https://user-images.githubusercontent.com/43943231/143334809-f09723e9-73bb-499e-b3bb-10c4c6c5cf64.png">
   
-InputComment : <CommentCard> 컴포넌트에서 onReply 값에 따라 답글 입력창 활성화
+InputComment : CommentCard 컴포넌트에서 onReply 값에 따라 답글 입력창 활성화
   
 (Comment의 CRUD는 gangstertalk >> controllers >> commentCtrl.js에서 확인)
 
