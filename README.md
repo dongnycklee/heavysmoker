@@ -414,9 +414,8 @@ follow 전
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ## Post
-
-![image](https://user-images.githubusercontent.com/43943231/143334609-3fcc548d-01da-48a6-8e1f-042e986094f2.png){: width="400"}
-![image](https://user-images.githubusercontent.com/43943231/143334634-0cf77c9f-f8a5-415f-9656-50f17e3cb2da.png)
+<img width="400" alt="hh" src="https://user-images.githubusercontent.com/43943231/143334609-3fcc548d-01da-48a6-8e1f-042e986094f2.png">
+<img width="400" alt="hh" src="https://user-images.githubusercontent.com/43943231/143334634-0cf77c9f-f8a5-415f-9656-50f17e3cb2da.png">
 
 CardHeader:  클릭 시 수정, 삭제, 링크 복사 기능
 
