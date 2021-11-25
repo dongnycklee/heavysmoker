@@ -413,7 +413,7 @@ follow 전
 **여기까지가 제가 만진부분입니다.**
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Post
+## Post
 
 ![image](https://user-images.githubusercontent.com/43943231/143334609-3fcc548d-01da-48a6-8e1f-042e986094f2.png)
 ![image](https://user-images.githubusercontent.com/43943231/143334634-0cf77c9f-f8a5-415f-9656-50f17e3cb2da.png)
@@ -430,7 +430,7 @@ StatusModal : Modal창을 활용한 Post생성 화면
 
 Post의 CRUD는 gangstertalk >> controllers >> postCtrl.js에서 확인
 
-Comment, InputComment
+## Comment, InputComment
 
 ![image](https://user-images.githubusercontent.com/43943231/143334747-3a1049f4-0d53-4972-8a2d-b795e82f41a9.png)
 
@@ -450,7 +450,7 @@ CommentDisplay: <CommentCard>, <CommentMenu> 컴포넌트를 브라우저에 보
 InputComment : <CommentCard> 컴포넌트에서 onReply 값에 따라 답글 입력창 활성화
 (Comment의 CRUD는 gangstertalk >> controllers >> commentCtrl.js에서 확인)
 
-Heroku
+## Heroku
 프로젝트 배포를 하기 위해 Heroku에 회원가입을 하고, Heroku CLI를 다운로드 한다.
 회원가입과 다운로드를 하고 heroku.com에 접속해 로그인하면 아래와 같은 화면이 나타난다.
 Heroku CLI를 설치하면서 만들어 놓은 저장소(gangstertalk)를 클릭한다.
