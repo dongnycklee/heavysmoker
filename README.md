@@ -81,6 +81,11 @@ Member.
 
 ### 사용한 기술
 
+--  
+<img width="700" alt="스크린샷 2021-10-15 오후 3 51 02" src="https://i.esdrop.com/d/cl3pewp2aooj/veY18Ev41Q.png">
+
+---   
+
 - 웹 화면 구성 : `HTML5` `CSS3` `bootstrap` `JavaScript` `Scss` `React`
 - 검색 결과 데이터 요청 및 출력 : `jQuery` `Ajax` `JSON` `axios`
 - DB 액션 처리 : `MongoDB`
