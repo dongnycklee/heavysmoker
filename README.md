@@ -76,7 +76,7 @@ Member.
    - 커뮤니티 서비스 제공
    
 
-### 전체 소스 코드 [소스](https://github.com/3eteam/3eteamproject)
+### 전체 소스 코드 [소스](https://github.com/dongnycklee/heavysmoker/tree/sns/sns/smoker_talk)
 
 
 ### 사용한 기술
