@@ -417,7 +417,8 @@ follow 전
 <img width="400" alt="hh" src="https://user-images.githubusercontent.com/43943231/143334609-3fcc548d-01da-48a6-8e1f-042e986094f2.png">
 <img width="400" alt="hh" src="https://user-images.githubusercontent.com/43943231/143334634-0cf77c9f-f8a5-415f-9656-50f17e3cb2da.png">
 
-CardHeader:  클릭 시 수정, 삭제, 링크 복사 기능
+CardHeader: ![image](https://user-images.githubusercontent.com/43943231/143365263-6d0ba52e-7347-4638-b967-e1eac94a4a03.png)
+클릭 시 수정, 삭제, 링크 복사 기능
 
 CardBody: Post의 내용 및 이미지
 
@@ -442,7 +443,8 @@ Post의 CRUD는 gangstertalk >> controllers >> postCtrl.js에서 확인
 
 CommentCard: 댓글 frame 구성. 수정 및 답글 입력 시 리렌더링
 
-CommentMenu:   클릭 시 수정, 지우기 기능
+CommentMenu:  ![image](https://user-images.githubusercontent.com/43943231/143365294-141e8d56-b09d-46aa-a471-02db592182a9.png)
+클릭 시 수정, 지우기 기능
 
 CommentDisplay: CommentCard, CommentMenu 컴포넌트를 브라우저에 보여준다
   
