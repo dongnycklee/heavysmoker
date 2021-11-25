@@ -413,8 +413,46 @@ follow 전
 **여기까지가 제가 만진부분입니다.**
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Post
+![image](https://user-images.githubusercontent.com/43943231/143334609-3fcc548d-01da-48a6-8e1f-042e986094f2.png)
+![image](https://user-images.githubusercontent.com/43943231/143334634-0cf77c9f-f8a5-415f-9656-50f17e3cb2da.png)
+CardHeader:  클릭 시 수정, 삭제, 링크 복사 기능
+CardBody: Post의 내용 및 이미지
+CardFooter: 좋아요, 댓글, 공유, 관심 게시글 버튼
 
+![image](https://user-images.githubusercontent.com/43943231/143334691-24e76001-431c-4f73-8503-7eb470d541a5.png)
+StatusModal : Modal창을 활용한 Post생성 화면
 
+![image](https://user-images.githubusercontent.com/43943231/143334726-03fb5be0-2a9a-469a-90f8-300c68049164.png)
+Post의 CRUD는 gangstertalk >> controllers >> postCtrl.js에서 확인
+
+Comment, InputComment
+![image](https://user-images.githubusercontent.com/43943231/143334747-3a1049f4-0d53-4972-8a2d-b795e82f41a9.png)
+
+댓글
+![image](https://user-images.githubusercontent.com/43943231/143334763-bb8a4d24-e393-4247-8d0d-852e33bbe134.png)
+![image](https://user-images.githubusercontent.com/43943231/143334772-4cfabd1d-3eb0-4849-9f21-cd2f8c30a6ab.png)
+CommentCard: 댓글 frame 구성. 수정 및 답글 입력 시 리렌더링
+CommentMenu:   클릭 시 수정, 지우기 기능
+CommentDisplay: <CommentCard>, <CommentMenu> 컴포넌트를 브라우저에 보여준다
+  
+답글
+![image](https://user-images.githubusercontent.com/43943231/143334809-f09723e9-73bb-499e-b3bb-10c4c6c5cf64.png)
+InputComment : <CommentCard> 컴포넌트에서 onReply 값에 따라 답글 입력창 활성화
+(Comment의 CRUD는 gangstertalk >> controllers >> commentCtrl.js에서 확인)
+
+Heroku
+프로젝트 배포를 하기 위해 Heroku에 회원가입을 하고, Heroku CLI를 다운로드 한다.
+회원가입과 다운로드를 하고 heroku.com에 접속해 로그인하면 아래와 같은 화면이 나타난다.
+Heroku CLI를 설치하면서 만들어 놓은 저장소(gangstertalk)를 클릭한다.
+![image](https://user-images.githubusercontent.com/43943231/143334867-1bf89e44-17ad-46bf-a2bf-4f56cc2b16c7.png)
+
+Deploy 클릭
+![image](https://user-images.githubusercontent.com/43943231/143334883-7a5102b7-d553-4fbe-86d8-3c2eec333aa7.png)
+  
+VSCode에서 프로젝트 폴더를 열고 터미널을 실행한 뒤 표시된 명령어를 순서대로 입력한다.
+![image](https://user-images.githubusercontent.com/43943231/143334905-68d9c7ed-3991-4c16-ab3f-e3580c94367e.png)
+배포가 완료되면 저장소_이름.herokuapp.com에 접속해 사이트를 볼 수 있다.
 
 # 상세 설명
 전체 코드 : [코드](https://github.com/dongnycklee/heavysmoker/tree/main/main)
